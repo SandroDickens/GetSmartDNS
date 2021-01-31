@@ -11,11 +11,14 @@
              For example: SOCKS:127.0.0.1:10080, http:127.0.0.1:10081
              Proxy are optional. It is recommended if you have an proxy available, because download from github is very slow in Chinese mainland
 ```
+Proxy are optional. It is recommended if you have an proxy available, because download from github is very slow in Chinese mainland
 ## Windows
 ```cmd
-java -jar .\GetSmartDNS.jar -arch x86_64 -proxy http:127.0.0.1:10081
+java -jar .\GetSmartDNS.jar -arch x86_64 # Without proxy
+java -jar .\GetSmartDNS.jar -arch x86_64 -proxy http:127.0.0.1:10081 # Use proxy http://127.0.0.1:10080
 ```
 ### Linux
 ```bash
-java -jar ./GetSmartDNS.jar -arch x86_64 -proxy http:127.0.0.1:10081
+java -jar ./GetSmartDNS.jar -arch x86_64 # Without proxy
+java -jar ./GetSmartDNS.jar -arch x86_64 -proxy http:127.0.0.1:10081 # Use proxy http://127.0.0.1:10080
 ```
