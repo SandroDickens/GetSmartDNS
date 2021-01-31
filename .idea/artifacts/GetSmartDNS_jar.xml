@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="GetSmartDNS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GetSmartDNS_jar</output-path>
+    <root id="root">
+      <element id="archive" name="GetSmartDNS.jar">
+        <element id="module-output" name="Solution" />
+      </element>
+      <element id="library" level="project" name="json" />
+    </root>
+  </artifact>
+</component>
