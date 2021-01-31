@@ -1,4 +1,4 @@
-package com.samchiang;
+package work.nereus.github;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -84,7 +84,7 @@ class Solution {
 		boolean isUseProxy = false;
 		Proxy.Type proxyType = Proxy.Type.DIRECT;
 		String proxyString = null;
-		JSONObject jsonObject = null;
+		JSONObject jsonObject;
 		for (String x : args) {
 			if (x.contains("-proxy")) {
 				isUseProxy = true;
@@ -107,14 +107,14 @@ class Solution {
 
 		if (isUseProxy) {
 			/* /(http:)(((25[0-5])|(2[0-4]\d)|([01]?\d{1,2}))\.){1,3}((25[0-5])|(2[0-4]\d)|([01]?\d{1,2})){1}(:)([0-9]+)/gm */
-			final String httpProxyRegex = "(http:)(((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))\\.){1,3}((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2})){1}(:)([0-9]+)";
+			final String httpProxyRegex = "(http:)(((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))\\.){1,3}((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))(:)([0-9]+)";
 			/* /(SOCKS:)(((25[0-5])|(2[0-4]\d)|([01]?\d{1,2}))\.){1,3}((25[0-5])|(2[0-4]\d)|([01]?\d{1,2})){1}(:)([0-9]+)/gm */
-			final String socksProxyRegex = "(SOCKS:)(((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))\\.){1,3}((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2})){1}(:)([0-9]+)";
+			final String socksProxyRegex = "(SOCKS:)(((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))\\.){1,3}((25[0-5])|(2[0-4]\\d)|([01]?\\d{1,2}))(:)([0-9]+)";
 
 			if (proxyString != null) {
 				String[] argArray;
 
-				boolean isArgMatch = false;
+				boolean isArgMatch;
 				if (proxyType == Proxy.Type.HTTP) {
 					isArgMatch = proxyString.matches(httpProxyRegex);
 				}
@@ -191,7 +191,7 @@ class Solution {
 				File outFile = new File(name);
 				FileOutputStream outputStream = new FileOutputStream(outFile);
 				byte[] context = new byte[8 * 1024 * 1024];
-				int readSize = 0;
+				int readSize;
 				int offset = 0;
 				do {
 					readSize = downStream.read(context);
@@ -217,10 +217,6 @@ class Solution {
 
 	public void setProxySelector(Proxy.Type proxyType, InetSocketAddress address) {
 		this.proxySelector = new MyProxySelector(proxyType, address);
-	}
-
-	private ProxySelector getProxySelector() {
-		return proxySelector;
 	}
 }
 

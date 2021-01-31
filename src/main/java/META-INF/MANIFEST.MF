@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: work.nereus.github.Main
+Class-Path: json-20201115.jar
+

@@ -1,4 +1,4 @@
-package com.samchiang;
+package work.nereus.github;
 
 import java.io.IOException;
 import java.net.*;
