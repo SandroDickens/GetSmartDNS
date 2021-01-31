@@ -23,5 +23,6 @@
 hs_err_pid*
 
 .idea
-.out
+out
+target
 .ipk
